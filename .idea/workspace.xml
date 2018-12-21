@@ -2,72 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cf6764e5-52fe-43ea-906a-c02e901cce32" name="Default Changelist" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/Benchmarking-ChatApp-Protokolldatei" afterPath="$PROJECT_DIR$/Benchmarking-ChatApp-Protokolldatei" />
       <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/hm/dako/chat/benchmarking/BenchmarkingUserInterfaceSimulation.java" afterPath="$PROJECT_DIR$/src/main/java/edu/hm/dako/chat/benchmarking/BenchmarkingUserInterfaceSimulation.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hm/dako/chat/benchmarking/UserInterfaceInputParameters.java" afterPath="$PROJECT_DIR$/src/main/java/edu/hm/dako/chat/benchmarking/UserInterfaceInputParameters.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hm/dako/chat/benchmarking_jms/JmsChatClient.java" afterPath="$PROJECT_DIR$/src/main/java/edu/hm/dako/chat/benchmarking_jms/JmsChatClient.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/hm/dako/chat/benchmarking_jms/JmsSimpleMessageListenerThread.java" afterPath="$PROJECT_DIR$/src/main/java/edu/hm/dako/chat/benchmarking_jms/JmsSimpleMessageListenerThread.java" />
       <change beforePath="$PROJECT_DIR$/target/chatApplication.jar" afterPath="$PROJECT_DIR$/target/chatApplication.jar" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/benchmarking/BenchmarkingClientCoordinator.class" afterPath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/benchmarking/BenchmarkingClientCoordinator.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/benchmarking/BenchmarkingClientFactory$1.class" afterPath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/benchmarking/BenchmarkingClientFactory$1.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/benchmarking/BenchmarkingClientFactory.class" afterPath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/benchmarking/BenchmarkingClientFactory.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/benchmarking/BenchmarkingClientGuiFx2$7.class" afterPath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/benchmarking/BenchmarkingClientGuiFx2$7.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/benchmarking/BenchmarkingClientGuiFx2.class" afterPath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/benchmarking/BenchmarkingClientGuiFx2.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/benchmarking/BenchmarkingClientImpl$1.class" afterPath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/benchmarking/BenchmarkingClientImpl$1.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/benchmarking/BenchmarkingClientImpl.class" afterPath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/benchmarking/BenchmarkingClientImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/benchmarking/BenchmarkingTimeCounterThread.class" afterPath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/benchmarking/BenchmarkingTimeCounterThread.class" />
       <change beforePath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/benchmarking/BenchmarkingUserInterfaceSimulation.class" afterPath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/benchmarking/BenchmarkingUserInterfaceSimulation.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/benchmarking/UserInterfaceInputParameters$1.class" afterPath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/benchmarking/UserInterfaceInputParameters$1.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/benchmarking/UserInterfaceInputParameters.class" afterPath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/benchmarking/UserInterfaceInputParameters.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/benchmarking_jms/JmsBenchmarkingClientImpl$1.class" afterPath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/benchmarking_jms/JmsBenchmarkingClientImpl$1.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/benchmarking_jms/JmsBenchmarkingClientImpl.class" afterPath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/benchmarking_jms/JmsBenchmarkingClientImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/benchmarking_jms/JmsChatClient.class" afterPath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/benchmarking_jms/JmsChatClient.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/benchmarking_jms/JmsSimpleMessageListenerThread.class" afterPath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/benchmarking_jms/JmsSimpleMessageListenerThread.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/benchmarking_kafka/KafkaBenchmarkingClientImpl$1.class" afterPath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/benchmarking_kafka/KafkaBenchmarkingClientImpl$1.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/benchmarking_kafka/KafkaBenchmarkingClientImpl.class" afterPath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/benchmarking_kafka/KafkaBenchmarkingClientImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/benchmarking_kafka/KafkaChatClient.class" afterPath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/benchmarking_kafka/KafkaChatClient.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/benchmarking_kafka/KafkaSimpleMessageListenerThread.class" afterPath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/benchmarking_kafka/KafkaSimpleMessageListenerThread.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/client/AbstractChatClient.class" afterPath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/client/AbstractChatClient.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/client/AbstractMessageListenerThread.class" afterPath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/client/AbstractMessageListenerThread.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/client/ClientFxGUI$2.class" afterPath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/client/ClientFxGUI$2.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/client/ClientFxGUI.class" afterPath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/client/ClientFxGUI.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/client/ClientImpl.class" afterPath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/client/ClientImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/client/LogInGuiController.class" afterPath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/client/LogInGuiController.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/client/LoggedInGuiController.class" afterPath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/client/LoggedInGuiController.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/client/SimpleMessageListenerThreadImpl$1.class" afterPath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/client/SimpleMessageListenerThreadImpl$1.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/client/SimpleMessageListenerThreadImpl.class" afterPath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/client/SimpleMessageListenerThreadImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/client_jms/ClientController.class" afterPath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/client_jms/ClientController.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/client_jms/gui/ClientGUI.class" afterPath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/client_jms/gui/ClientGUI.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/client_jms/gui/Test.class" afterPath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/client_jms/gui/Test.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/client_jms/gui/TestClient.class" afterPath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/client_jms/gui/TestClient.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/common/ChatMessage.class" afterPath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/common/ChatMessage.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/common/ChatMessageDeserializer.class" afterPath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/common/ChatMessageDeserializer.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/common/ChatMessageSerializer.class" afterPath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/common/ChatMessageSerializer.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/common/ExceptionHandler.class" afterPath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/common/ExceptionHandler.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/common/JsonConverter.class" afterPath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/common/JsonConverter.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/common/MemoryTest.class" afterPath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/common/MemoryTest.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/common/SharedClientStatistics.class" afterPath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/common/SharedClientStatistics.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/common/TestNanoTime.class" afterPath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/common/TestNanoTime.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/connection/LoggingConnectionDecorator.class" afterPath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/connection/LoggingConnectionDecorator.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/server/ChatServerGUI$1.class" afterPath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/server/ChatServerGUI$1.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/server/ChatServerGUI$2.class" afterPath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/server/ChatServerGUI$2.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/server/ChatServerGUI$3.class" afterPath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/server/ChatServerGUI$3.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/server/ChatServerGUI$4.class" afterPath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/server/ChatServerGUI$4.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/server/ChatServerGUI.class" afterPath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/server/ChatServerGUI.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/server/ServerFactory$1.class" afterPath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/server/ServerFactory$1.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/server/ServerFactory.class" afterPath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/server/ServerFactory.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/server/SharedChatClientList.class" afterPath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/server/SharedChatClientList.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/server/SimpleChatServerImpl$1.class" afterPath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/server/SimpleChatServerImpl$1.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/server/SimpleChatServerImpl.class" afterPath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/server/SimpleChatServerImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/server/SimpleChatWorkerThreadImpl$1.class" afterPath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/server/SimpleChatWorkerThreadImpl$1.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/server/SimpleChatWorkerThreadImpl.class" afterPath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/server/SimpleChatWorkerThreadImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/tcp/TcpConnection.class" afterPath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/tcp/TcpConnection.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/tcp/TcpConnectionFactory.class" afterPath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/tcp/TcpConnectionFactory.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/tcp/TcpServerSocket.class" afterPath="$PROJECT_DIR$/target/classes/edu/hm/dako/chat/tcp/TcpServerSocket.class" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -448,12 +388,12 @@
       <updated>1545384034112</updated>
       <workItem from="1545384037689" duration="282000" />
       <workItem from="1545384479366" duration="852000" />
-      <workItem from="1545386259939" duration="785000" />
+      <workItem from="1545386259939" duration="1520000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1919000" />
+    <option name="totallyTimeSpent" value="2654000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />

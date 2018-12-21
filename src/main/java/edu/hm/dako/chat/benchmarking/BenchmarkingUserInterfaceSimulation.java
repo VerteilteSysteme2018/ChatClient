@@ -105,7 +105,7 @@ public class BenchmarkingUserInterfaceSimulation implements
   public void doWork() {
 	  
 	  // variable Parameter des JMS Benchmarks
-	  int numberOfClients = 50;
+	  int numberOfClients = 1;
 	  int numberOfMessages = 100;
 
 	  //JMS
