@@ -1,19 +1,10 @@
-### Netty "no such method" Fehler
+## ClientGUI
 
-HornetQ in 2.4.0.Final einbinden (bei neueren Versionen scheint sich eine Methode geändert zu haben...)
-
-### Wildfly Quickstart - HelloWorld JMS Client
-
-[github.com/wildfly/quickstart/tree/8.x/helloworld-jms](https://github.com/wildfly/quickstart/tree/8.x/helloworld-jms)
-
-### Package `test`
-
-- `HelloWorldJMSClient` Beispiel das Nachricht in Queue stellt und anschließend wieder aus dieser Queue liest
-- `JmsTopicPublisher` and `JmsTopicReciever` Reciever fragt in Endlosschleife Nachrichten vom Topic ab, Publisher sendet Nachrichten ans Topic. Publisher sollte natürlich später nicht blockend Nachrichten empfangen...
+ - Start der JMS / Kafka Client GUI über ClientStart
+ - Nachrichten können wahlweise via JMS oder Kafka verschickt werden (DropDown Menü zum auswählen)
 
 
+## Benchmark
  
- Benchmark
- 
- - Start über `BenchmarkingClientUserInterfaceSimulation` 
- - Parameter wie Anzahl der Clients und Messages können in dieser Klasse angepasst werden
+ - Start des Benchmarks über `BenchmarkingClientUserInterfaceSimulation` 
+ - Parameter (Anzahl der Clients, Anzahl Messages & Typ des Servers (TCP, JMS, Kafka) können in der Klasse angepasst werden (Methode doWork())
