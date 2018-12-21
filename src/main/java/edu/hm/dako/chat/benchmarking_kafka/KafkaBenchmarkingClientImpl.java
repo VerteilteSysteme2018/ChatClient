@@ -127,6 +127,7 @@ public class KafkaBenchmarkingClientImpl extends KafkaChatClient
                 // start Kafka Listener-Thread
                 try {
                     String threadName = "Client-Thread-" + clientNumber;
+
                     messageListenerThread = new KafkaSimpleMessageListenerThread(this, connection, sharedClientData, threadName, numberOfMessagesToSend);
                     messageListenerThread.start();
                 } catch (Exception e) {

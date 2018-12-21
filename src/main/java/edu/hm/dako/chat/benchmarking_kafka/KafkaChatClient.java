@@ -7,12 +7,17 @@ import edu.hm.dako.chat.client_jms.ClientController;
 import edu.hm.dako.chat.common.ChatMessage;
 import edu.hm.dako.chat.common.ClientConversationStatus;
 import edu.hm.dako.chat.connection.Connection;
+import org.apache.kafka.clients.consumer.ConsumerRecord;
+import org.apache.kafka.clients.consumer.ConsumerRecords;
+import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerRecord;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 import java.util.logging.Logger;
 
@@ -54,7 +59,7 @@ public class KafkaChatClient implements ClientCommunication {
 
     @Override
     public void login(String name) throws IOException {
-        sharedClientData.userName = name;
+        //sharedClientData.userName = name;
         // sharedClientData.status = ClientConversationStatus.REGISTERING;
         String uri = REST + "login/" + name;
         URL url = new URL(uri);
@@ -66,7 +71,7 @@ public class KafkaChatClient implements ClientCommunication {
         System.out.println("Response Code : " + responseCode);
         if (responseCode == 200 || responseCode == 201) {
             System.out.println("user logged in ");
-            sharedClientData.status = ClientConversationStatus.REGISTERED;
+            //sharedClientData.status = ClientConversationStatus.REGISTERED;
             this.name = name;
         } else {
             System.out.println("user not logged in");
@@ -124,6 +129,8 @@ public class KafkaChatClient implements ClientCommunication {
 
 
     }
+
+
 
     @Override
     public void cancelConnection() {

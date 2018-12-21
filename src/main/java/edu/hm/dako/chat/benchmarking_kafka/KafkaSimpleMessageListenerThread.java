@@ -24,21 +24,13 @@ public class KafkaSimpleMessageListenerThread extends AbstractMessageListenerThr
     private String threadName;
     private int numberOfMessagesToSend;
 
-    KafkaConsumer kafkaConsumer;
 
     public KafkaSimpleMessageListenerThread(ClientUserInterface userInterface, Connection con, SharedClientData sharedData, String threadName, int numberOfMessagesToSend) {
 
         super(userInterface, con, sharedData);
         this.threadName = threadName;
-        this.numberOfMessagesToSend = numberOfMessagesToSend;Properties properties = new Properties();
-        properties.put("bootstrap.servers", "localhost:9092");
-        properties.put("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
-        properties.put("value.deserializer", "edu.hm.dako.chat.common.ChatMessageDeserializer");
-        properties.put("group.id", this.threadName);//"test-group");
-        this.kafkaConsumer = new KafkaConsumer(properties);
-        List topics = new ArrayList();
-        topics.add("responseTopic");
-        this.kafkaConsumer.subscribe(topics);
+        this.numberOfMessagesToSend = numberOfMessagesToSend;
+
 
 
     }
@@ -47,8 +39,17 @@ public class KafkaSimpleMessageListenerThread extends AbstractMessageListenerThr
     public void run() {
 
         //get Kafka Topic
+        Properties properties = new Properties();
+        properties.put("bootstrap.servers", "localhost:9092");
+        properties.put("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
+        properties.put("value.deserializer", "edu.hm.dako.chat.common.ChatMessageDeserializer");
+        properties.put("group.id", this.threadName);//"test-group");
+        KafkaConsumer kafkaConsumer = new KafkaConsumer(properties);
+        List topics = new ArrayList();
+        topics.add("responseTopic");
+        kafkaConsumer.subscribe(topics);
 
-        ConsumerRecords<String, ChatMessage> messages = this.kafkaConsumer.poll(1000);
+        ConsumerRecords<String, ChatMessage> messages = kafkaConsumer.poll(1000);
         for (ConsumerRecord<String, ChatMessage> omessage : messages) {
             System.out.println("Message received " + omessage.value().toString());
             ChatMessage message = omessage.value();
