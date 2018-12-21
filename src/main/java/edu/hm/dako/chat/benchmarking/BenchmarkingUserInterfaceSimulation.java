@@ -105,14 +105,14 @@ public class BenchmarkingUserInterfaceSimulation implements
   public void doWork() {
 	  
 	  // variable Parameter des JMS Benchmarks
-	  int numberOfClients = 10;
+	  int numberOfClients = 50;
 	  int numberOfMessages = 100;
 
 	  //JMS
-	  //UserInterfaceInputParameters parm = new UserInterfaceInputParameters(numberOfClients, numberOfMessages, ImplementationType.JMSImplementation);
+	  UserInterfaceInputParameters parm = new UserInterfaceInputParameters(numberOfClients, numberOfMessages, ImplementationType.JMSImplementation);
 
 	  //Kafka
-      UserInterfaceInputParameters parm = new UserInterfaceInputParameters(numberOfClients, numberOfMessages, ImplementationType.KafkaImplementation);
+    //  UserInterfaceInputParameters parm = new UserInterfaceInputParameters(numberOfClients, numberOfMessages, ImplementationType.KafkaImplementation);
 
       //TCP
       //UserInterfaceInputParameters parm = new UserInterfaceInputParameters();

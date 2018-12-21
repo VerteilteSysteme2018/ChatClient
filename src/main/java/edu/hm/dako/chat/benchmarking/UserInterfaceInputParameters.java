@@ -55,7 +55,7 @@ public class UserInterfaceInputParameters {
 		messageLength = 50;
 		this.numberOfMessages = numberOfMessages;
 		remoteServerPort = 8080;
-		remoteServerAddress = "127.0.0.1";
+		remoteServerAddress = "169.254.83.233";
 		this.implementationType = implementationType;
 		measurementType = MeasurementType.VarThreads;
 	}

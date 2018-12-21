@@ -33,7 +33,7 @@ public class JmsSimpleMessageListenerThread extends AbstractMessageListenerThrea
 
 	public void run() {
 
-		client = new JmsChatClient(userInterface, "jms", "8080", "localhost");
+		client = new JmsChatClient(userInterface, "jms", "8080", "169.254.83.233");
 		JMSContext context = client.getJMSContext();
 		Destination topic = client.getTopic();
 		JMSConsumer consumer = context.createConsumer(topic);

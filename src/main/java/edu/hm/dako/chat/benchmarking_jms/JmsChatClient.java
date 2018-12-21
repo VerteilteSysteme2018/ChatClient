@@ -46,7 +46,7 @@ public class JmsChatClient implements ClientCommunication {
     private static final Logger log = Logger.getLogger(ClientController.class.getName());
 
     //REST
-    private static final String REST = "http://localhost:8080/server-1.0-SNAPSHOT/rest/users/";
+    private static final String REST = "http://169.254.83.233:8080/server-1.0-SNAPSHOT/rest/users/";
 
     //DEFAULTS JMS
     private static final String USERNAME = "user";
