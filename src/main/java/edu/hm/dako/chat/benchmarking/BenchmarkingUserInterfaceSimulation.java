@@ -109,10 +109,10 @@ public class BenchmarkingUserInterfaceSimulation implements
 	  int numberOfMessages = 100;
 
 	  //JMS
-	  UserInterfaceInputParameters parm = new UserInterfaceInputParameters(numberOfClients, numberOfMessages, ImplementationType.JMSImplementation);
+	  //UserInterfaceInputParameters parm = new UserInterfaceInputParameters(numberOfClients, numberOfMessages, ImplementationType.JMSImplementation);
 
 	  //Kafka
-      //UserInterfaceInputParameters parm = new UserInterfaceInputParameters(numberOfClients, numberOfMessages, ImplementationType.KafkaImplementation);
+      UserInterfaceInputParameters parm = new UserInterfaceInputParameters(numberOfClients, numberOfMessages, ImplementationType.KafkaImplementation);
 
       //TCP
       //UserInterfaceInputParameters parm = new UserInterfaceInputParameters();

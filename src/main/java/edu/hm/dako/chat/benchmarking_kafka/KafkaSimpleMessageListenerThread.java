@@ -24,49 +24,42 @@ public class KafkaSimpleMessageListenerThread extends AbstractMessageListenerThr
     private String threadName;
     private int numberOfMessagesToSend;
 
+    KafkaConsumer kafkaConsumer;
+
     public KafkaSimpleMessageListenerThread(ClientUserInterface userInterface, Connection con, SharedClientData sharedData, String threadName, int numberOfMessagesToSend) {
 
         super(userInterface, con, sharedData);
         this.threadName = threadName;
-        this.numberOfMessagesToSend = numberOfMessagesToSend;
-    }
-
-    public void run() {
-
-        //get Kafka Topic
-        Properties properties = new Properties();
+        this.numberOfMessagesToSend = numberOfMessagesToSend;Properties properties = new Properties();
         properties.put("bootstrap.servers", "localhost:9092");
         properties.put("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
         properties.put("value.deserializer", "edu.hm.dako.chat.common.ChatMessageDeserializer");
         properties.put("group.id", this.threadName);//"test-group");
-        KafkaConsumer kafkaConsumer = new KafkaConsumer(properties);
+        this.kafkaConsumer = new KafkaConsumer(properties);
         List topics = new ArrayList();
         topics.add("responseTopic");
-        kafkaConsumer.subscribe(topics);
-        Thread thread = new Thread(() -> {
-            try {
+        this.kafkaConsumer.subscribe(topics);
 
-                while (true) {
-                    ConsumerRecords<String, ChatMessage> messages = kafkaConsumer.poll(1000);
-                    for (ConsumerRecord<String, ChatMessage> omessage : messages) {
-                        System.out.println("Message received " + omessage.value().toString());
-                        ChatMessage message = omessage.value();
-                        String chatName = message.getUserName();
-                        String chatMessage = message.getMessage();
 
-                        System.out.println(message.getUserName() + ":" + message.getMessage());
+    }
 
-                        chatMessageEventAction(chatName);
-                        chatMessageResponseAction(chatName);
-                    }
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        });
-        thread.start();
-        
-        
+
+    public void run() {
+
+        //get Kafka Topic
+
+        ConsumerRecords<String, ChatMessage> messages = this.kafkaConsumer.poll(1000);
+        for (ConsumerRecord<String, ChatMessage> omessage : messages) {
+            System.out.println("Message received " + omessage.value().toString());
+            ChatMessage message = omessage.value();
+            String chatName = message.getUserName();
+            String chatMessage = message.getMessage();
+
+            System.out.println(message.getUserName() + ":" + message.getMessage());
+
+            chatMessageEventAction(chatName);
+            chatMessageResponseAction(chatName);
+        }
     }
 
     @Override

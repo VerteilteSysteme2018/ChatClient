@@ -29,9 +29,9 @@ public class ClientController {
     private static final String USERNAME = "user";
     private static final String PASSWORD = "user";
     private static final String INITIAL_CONTEXT_FACTORY = "org.wildfly.naming.client.WildFlyInitialContextFactory";
-    private static final String CONNECTION_FACTORY = "jms/RemoteConnectionFactory";
-    private static final String QUEUE_DESTINATION = "jms/queue/chatQueue";
-    private static final String TOPIC_DESTINATION = "jms/topic/chatTopic";
+    private static final String CONNECTION_FACTORY = "java:jboss/exported/jms/RemoteConnectionFactory";
+    private static final String QUEUE_DESTINATION = "java:jboss/exported/jms/queue/chatQueue";
+    private static final String TOPIC_DESTINATION = "java:jboss/exported/jms/topic/chatTopic";
 
 
     private Destination topic;

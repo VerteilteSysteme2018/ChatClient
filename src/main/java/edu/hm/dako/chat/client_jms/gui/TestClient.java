@@ -9,17 +9,27 @@ import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 
 import javax.jms.*;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
 public class TestClient implements Runnable {
 
-    public TestClient(String username, String serverIP, String serverPort) {
+
+
+    public TestClient(String username, String serverIP, String serverPort) throws FileNotFoundException {
         this.username = username;
         this.serverIP = serverIP;
         this.serverPort = serverPort;
+
+
+
+        run();
+
     }
 
     private String username;
@@ -31,6 +41,9 @@ public class TestClient implements Runnable {
     private ClientController clientController;
 
     private Destination topic;
+
+
+
 
 
     public void loginUser() {
@@ -68,6 +81,7 @@ public class TestClient implements Runnable {
     }
 
     public void getMessages() {
+
         Thread t1 = new Thread(() -> {
             JMSContext context = clientController.getJMSContext();
             Destination topic = clientController.getTopic();
@@ -91,7 +105,27 @@ public class TestClient implements Runnable {
 
                     long RTT = System.currentTimeMillis() - time;
 
+                    //Create CSV
+                    PrintWriter pw = null;
+                    try {
+                        pw = new PrintWriter(new File("/Users/anjawolf/test.csv"));
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    }
+                    StringBuilder sb = new StringBuilder();
+
+                    sb.append(name);
+                    sb.append(",");
+                    sb.append(message);
+                    sb.append(",");
+                    sb.append(time);
+                    sb.append('\n');
+
+                    pw.write(sb.toString());
+
                     System.out.print("\n \n Roundtriptime:" + RTT + "for message " + message + " from " + name);
+
+
                 }
 
 

@@ -1,5 +1,8 @@
 package edu.hm.dako.chat.client_jms.gui;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.Calendar;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -20,7 +23,17 @@ public class Test {
 
 
 
-    public static void main(String args[]) {
+    public static void main(String args[]) throws FileNotFoundException {
+
+        //Create CSV
+        PrintWriter pw = new PrintWriter(new File("test.csv"));
+        StringBuilder sb = new StringBuilder();
+        sb.append("Name");
+        sb.append(',');
+        sb.append("Message");
+        sb.append(',');
+        sb.append("RTT");
+        sb.append('\n');
 
         int clientNumber = 10;
 

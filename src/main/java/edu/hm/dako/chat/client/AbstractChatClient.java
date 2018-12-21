@@ -13,7 +13,6 @@ import edu.hm.dako.chat.common.PduType;
 import edu.hm.dako.chat.connection.Connection;
 import edu.hm.dako.chat.connection.ConnectionFactory;
 import edu.hm.dako.chat.connection.DecoratingConnectionFactory;
-import edu.hm.dako.chat.newClient.ClientManager;
 import edu.hm.dako.chat.tcp.TcpConnectionFactory;
 
 /**

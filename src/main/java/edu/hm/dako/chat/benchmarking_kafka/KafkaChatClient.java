@@ -49,6 +49,9 @@ public class KafkaChatClient implements ClientCommunication {
     }
 
 
+    public KafkaChatClient() { }
+
+
     @Override
     public void login(String name) throws IOException {
         sharedClientData.userName = name;
