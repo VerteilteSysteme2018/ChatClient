@@ -311,40 +311,12 @@ public class SimpleMessageListenerThreadImpl extends AbstractMessageListenerThre
 				+ sharedClientData.userName + ", Status: " + sharedClientData.status);
 	} // run
 
-	
-
-		
-	
 
 	@Override
 	protected void chatMessageEventAction(String user) {
 		// TODO Auto-generated method stub
 		sharedClientData.eventCounter.getAndIncrement();
 		int events = SharedClientData.messageEvents.incrementAndGet();
-	}
-
-	@Override
-	protected void loginResponseAction(String user) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	protected void loginEventAction(String user) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	protected void logoutEventAction(String user) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	protected void logoutResponseAction(String user) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
