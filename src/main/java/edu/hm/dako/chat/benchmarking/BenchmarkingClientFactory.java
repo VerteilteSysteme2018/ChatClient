@@ -1,7 +1,6 @@
 package edu.hm.dako.chat.benchmarking;
 
 import edu.hm.dako.chat.benchmarking_jms.JmsBenchmarkingClientImpl;
-import edu.hm.dako.chat.benchmarking_kafka.KafkaBenchmarkingClientImpl;
 import edu.hm.dako.chat.client.ClientUserInterface;
 import edu.hm.dako.chat.common.SharedClientStatistics;
 import edu.hm.dako.chat.connection.ConnectionFactory;
@@ -46,15 +45,6 @@ public final class BenchmarkingClientFactory {
 						param.getNumberOfMessages(), param.getClientThinkTime(),
 						param.getNumberOfRetries(), param.getResponseTimeout(), sharedData);
 					return jmsImpl;
-
-				case KafkaImplementation:
-
-					KafkaBenchmarkingClientImpl kafkaImpl = new KafkaBenchmarkingClientImpl(userInterface,
-							benchmarkingGui, param.getImplementationType(), param.getRemoteServerPort(),
-							param.getRemoteServerAddress(), numberOfClient, param.getMessageLength(),
-							param.getNumberOfMessages(), param.getClientThinkTime(),
-							param.getNumberOfRetries(), param.getResponseTimeout(), sharedData);
-					return kafkaImpl;
 
 			default:
 				throw new RuntimeException(

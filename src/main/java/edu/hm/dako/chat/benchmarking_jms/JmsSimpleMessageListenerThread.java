@@ -33,15 +33,16 @@ public class JmsSimpleMessageListenerThread extends AbstractMessageListenerThrea
 
 	public void run() {
 
-		client = new JmsChatClient(userInterface, "jms", "8080", "169.254.83.233");
-		JMSContext context = client.getJMSContext();
-		Destination topic = client.getTopic();
+		jmsChatClient = new JmsChatClient(userInterface, "jms", "8080", "localhost");
+		JMSContext context = jmsChatClient.getJMSContext();
+		Destination topic = jmsChatClient.getTopic();
 		JMSConsumer consumer = context.createConsumer(topic);
 
-		boolean messageCheck = true;
-		while(messageCheck == true) {
+		boolean receiving = true;
 
-			String messages = consumer.receiveBody(String.class, 5000);
+		while(receiving == true) {
+
+			String messages = consumer.receiveBody(String.class, 3000);
 
 			if(messages != null) {
 
@@ -55,39 +56,35 @@ public class JmsSimpleMessageListenerThread extends AbstractMessageListenerThrea
 				chatMessageResponseAction(name);
 			}
 
-
-//			if(sharedClientData.messageCounter.get() == numberOfMessagesToSend) {
-//				messageCheck = false;
-//			}
 		}
 	}
 
 	@Override
 	protected void chatMessageResponseAction(ChatPDU receivedPdu) {
-		// nothing to do for JMS implementation
+		//
 
 	}
 
 	@Override
 	protected void chatMessageEventAction(ChatPDU receivedPdu) {
-		// nothing to do for JMS implementation
+		//
 
 	}
 
 	@Override
 	protected void loginResponseAction(ChatPDU receivedPdu) {
-		// nothing to do for JMS implementation
+		//
 
 	}
 
 	@Override
 	protected void loginEventAction(ChatPDU receivedPdu) {
-		// nothing to do for JMS implementation
+		//
 	}
 
 	@Override
 	protected void logoutEventAction(ChatPDU receivedPdu) {
-		// nothing to do for JMS implementation
+		//
 	}
 
 	@Override
@@ -114,31 +111,6 @@ public class JmsSimpleMessageListenerThread extends AbstractMessageListenerThrea
 		int events = SharedClientData.messageEvents.incrementAndGet();
 
 		log.debug("MessageEventCounter: " + events);
-	}
-
-	@Override
-	protected void loginResponseAction(String user) {
-
-		// nothing to do for JMS implementation 
-
-	}
-
-	@Override
-	protected void loginEventAction(String user) {
-
-		// nothing to do for JMS implementation
-	}
-
-	@Override
-	protected void logoutEventAction(String user) {
-
-		// nothing to do for JMS implementation
-	}
-
-	@Override
-	protected void logoutResponseAction(String user) {
-
-		// nothing to do for JMS implementation
 	}
 
 }

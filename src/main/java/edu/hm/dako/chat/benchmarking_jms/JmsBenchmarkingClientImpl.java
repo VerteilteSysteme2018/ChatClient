@@ -101,7 +101,7 @@ public class JmsBenchmarkingClientImpl extends JmsChatClient
 									 int numberOfClient, int messageLength, int numberOfMessages, int clientThinkTime,
 									 int numberOfRetries, int responseTimeout, SharedClientStatistics sharedStatistics) {
 		
-		super(userInterface, "jms benchmark", String.valueOf(serverPort),remoteServerAddress);
+		super(userInterface, "jms", String.valueOf(serverPort),remoteServerAddress);
 		
 		this.benchmarkingGui = benchmarkingGui;
 		this.implementationType = implementationType;
@@ -126,7 +126,7 @@ public class JmsBenchmarkingClientImpl extends JmsChatClient
 		case JMSImplementation:
 			// start JMS Listener-Thread
 			try {
-				String threadName = "Client-Thread-" + clientNumber;
+				String threadName = "Client-Thread-" + (clientNumber + 1);
 				messageListenerThread = new JmsSimpleMessageListenerThread(this, connection, sharedClientData, threadName, numberOfMessagesToSend);
 				messageListenerThread.start();
 			} catch (Exception e) {

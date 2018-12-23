@@ -48,14 +48,14 @@ public class UserInterfaceInputParameters {
 		measurementType = MeasurementType.VarThreads;
 	}
 	
-	// constructor for JMS Benchmark // Kafka
+	// constructor for JMS Benchmark
 	public UserInterfaceInputParameters(int numberOfClients, int numberOfMessages, ImplementationType implementationType) {
 		this.numberOfClients = numberOfClients;
 		clientThinkTime = 1;
 		messageLength = 50;
 		this.numberOfMessages = numberOfMessages;
 		remoteServerPort = 8080;
-		remoteServerAddress = "169.254.83.233";
+		remoteServerAddress = "localhost";
 		this.implementationType = implementationType;
 		measurementType = MeasurementType.VarThreads;
 	}

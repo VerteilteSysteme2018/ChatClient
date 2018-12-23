@@ -112,7 +112,7 @@ public class BenchmarkingUserInterfaceSimulation implements
 	  UserInterfaceInputParameters parm = new UserInterfaceInputParameters(numberOfClients, numberOfMessages, ImplementationType.JMSImplementation);
 
 	  //Kafka
-    //  UserInterfaceInputParameters parm = new UserInterfaceInputParameters(numberOfClients, numberOfMessages, ImplementationType.KafkaImplementation);
+      //UserInterfaceInputParameters parm = new UserInterfaceInputParameters(numberOfClients, numberOfMessages, ImplementationType.KafkaImplementation);
 
       //TCP
       //UserInterfaceInputParameters parm = new UserInterfaceInputParameters();

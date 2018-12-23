@@ -25,30 +25,24 @@ import java.util.logging.Logger;
 
 public class JmsChatClient implements ClientCommunication {
 
-    // Username (Login-Kennung) des Clients
     protected String userName;
 
     protected String threadName;
 
     protected ClientUserInterface userInterface;
 
-    // Connection Factory und Verbindung zum Server
-    // protected ConnectionFactory connectionFactory;
     protected Connection connection;
 
-
-    // Gemeinsame Daten des Clientthreads und dem Message-Listener-Threads
     protected SharedClientData sharedClientData;
 
-    // Thread, der die ankommenden Nachrichten fuer den Client verarbeitet
     protected Thread messageListenerThread;
 
     private static final Logger log = Logger.getLogger(ClientController.class.getName());
 
     //REST
-    private static final String REST = "http://169.254.83.233:8080/server-1.0-SNAPSHOT/rest/users/";
+    private static final String REST = "http://localhost:8080/server-1.0-SNAPSHOT/rest/users/";
 
-    //DEFAULTS JMS
+    //JMS
     private static final String USERNAME = "user";
     private static final String PASSWORD = "user";
     private static final String INITIAL_CONTEXT_FACTORY = "org.jboss.naming.remote.client.InitialContextFactory";
@@ -56,21 +50,24 @@ public class JmsChatClient implements ClientCommunication {
     private static final String QUEUE_DESTINATION = "jms/queue/chatQueue";
     private static final String TOPIC_DESTINATION = "jms/topic/chatTopic";
 
-    //CLIENT DATA
-    private String name;
-    private String serverIP;
-    protected String serverPort;
-    private String providerURL;
-
-    //QUEUE TOPIC
     private Context namingContext = null;
     private ConnectionFactory connectionFactory;
     private Destination queue;
     private Destination topic;
 
+
+    //CLIENT
+    private String name;
+    private String serverIP;
+    protected String serverPort;
+    private String providerURL;
+
+
+
     /**
      * @param userInterface GUI-Interface
-     * @param serverPort            Port des Servers
+     * @param name Name des Users
+     * @param serverPort  Port des Servers
      * @param serverIP   Adresse des Servers
      */
 
@@ -82,10 +79,8 @@ public class JmsChatClient implements ClientCommunication {
         this.name = name;
 
         this.serverPort = serverPort;
-        //serverPort = "8080";
 
         this.serverIP = serverIP;
-        //remoteServerAddress = "localhost";
 
         this.providerURL = "http-remoting://" + this.serverIP + ":" + this.serverPort;
 
@@ -115,7 +110,7 @@ public class JmsChatClient implements ClientCommunication {
     @Override
     public void login(String name) throws IOException {
         sharedClientData.userName = name;
-        // sharedClientData.status = ClientConversationStatus.REGISTERING;
+        sharedClientData.status = ClientConversationStatus.REGISTERING;
         String uri = REST + "login/" + name;
         URL url = new URL(uri);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -160,19 +155,20 @@ public class JmsChatClient implements ClientCommunication {
     @Override
     public void tell(String name, String text) throws IOException {
 
-        // Prepare content
+        // Prepare message
         ChatMessage chatMessage = new ChatMessage(this.name, text, System.currentTimeMillis(), Thread.currentThread().toString(), "JMS");
         Gson gson = new Gson();
         String content = gson.toJson(chatMessage);
 
         try (JMSContext context = this.connectionFactory.createContext(System.getProperty("username", USERNAME), System.getProperty("password", PASSWORD))) {
-            // log.info("Sending message with content: " + content);
-            // Send the specified message
+
             context.createProducer().setProperty("userName", this.name).send(this.queue, content);
+
             sharedClientData.confirmCounter.incrementAndGet();
             sharedClientData.messageCounter.incrementAndGet();
         } catch (Exception e) {
-            ((Logger) log).severe(e.getMessage());
+            log.severe(e.getMessage());
+            System.out.print("exception while trying to send message");
         }
 
     }

@@ -18,23 +18,14 @@ import java.util.logging.Logger;
 
 public class KafkaChatClient implements ClientCommunication {
 
-    // Username (Login-Kennung) des Clients
+
     protected String userName;
 
-    protected String threadName;
 
     protected ClientUserInterface userInterface;
 
-    // Connection Factory und Verbindung zum Server
-    // protected ConnectionFactory connectionFactory;
     protected Connection connection;
 
-
-    // Gemeinsame Daten des Clientthreads und dem Message-Listener-Threads
-    protected SharedClientData sharedClientData;
-
-    // Thread, der die ankommenden Nachrichten fuer den Client verarbeitet
-    protected Thread messageListenerThread;
 
     private static final Logger log = Logger.getLogger(ClientController.class.getName());
 
@@ -44,18 +35,13 @@ public class KafkaChatClient implements ClientCommunication {
     //CLIENT DATA
     private String name;
 
-    public KafkaChatClient(ClientUserInterface userInterface) {
-        this.userInterface = userInterface;
-    }
-
 
     public KafkaChatClient() { }
 
 
     @Override
     public void login(String name) throws IOException {
-        //sharedClientData.userName = name;
-        // sharedClientData.status = ClientConversationStatus.REGISTERING;
+
         String uri = REST + "login/" + name;
         URL url = new URL(uri);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -66,7 +52,6 @@ public class KafkaChatClient implements ClientCommunication {
         System.out.println("Response Code : " + responseCode);
         if (responseCode == 200 || responseCode == 201) {
             System.out.println("user logged in ");
-            //sharedClientData.status = ClientConversationStatus.REGISTERED;
             this.name = name;
         } else {
             System.out.println("user not logged in");
@@ -76,8 +61,6 @@ public class KafkaChatClient implements ClientCommunication {
 
     @Override
     public void logout(String name) throws IOException {
-
-        sharedClientData.status = ClientConversationStatus.UNREGISTERING;
 
         String uri = REST + "logout/" + name;
         URL url = new URL(uri);
@@ -89,7 +72,6 @@ public class KafkaChatClient implements ClientCommunication {
         System.out.println("Response Code : " + responseCode);
         if (responseCode == 200) {
             System.out.println("User successfully logged out");
-            sharedClientData.status = ClientConversationStatus.UNREGISTERED;
             this.name = null;
         } else {
             System.out.println("User was not logged in at the server");
@@ -129,12 +111,12 @@ public class KafkaChatClient implements ClientCommunication {
 
     @Override
     public void cancelConnection() {
-
+    //
     }
 
     @Override
     public boolean isLoggedOut() {
-        return (sharedClientData.status == ClientConversationStatus.UNREGISTERED);
+        return false;
     }
 
 

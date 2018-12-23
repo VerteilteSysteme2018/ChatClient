@@ -30,10 +30,10 @@ public abstract class AbstractMessageListenerThread extends Thread {
 	protected ClientUserInterface userInterface;
 	
 	// JMS
-	protected JmsChatClient client;
+	protected JmsChatClient jmsChatClient;
 
 	// KAFKA
-	protected KafkaChatClient kafka;
+	protected KafkaChatClient kafkaChatClient;
 
 	// Gemeinsame Daten zwischen Client-Thread und Message-Processing-Thread
 	protected SharedClientData sharedClientData;
@@ -135,50 +135,20 @@ public abstract class AbstractMessageListenerThread extends Thread {
 
 	/**
 	 * Aktion zur Behandlung ankommender ChatMessageEvents.
-	 * 
-	 * @param receivedPdu
+	 *
+	 * @param user
 	 *          Ankommende PDU
 	 */
 	protected abstract void chatMessageResponseAction(String user);
 
 	/**
 	 * Aktion zur Behandlung ankommender ChatMessageResponses.
-	 * 
-	 * @param receivedPdu
+	 *
+	 * @param user
 	 *          Ankommende PDU
 	 */
 	protected abstract void chatMessageEventAction(String user);
 
-	/**
-	 * Aktion zur Behandlung ankommender Login-Responsesd.
-	 * 
-	 * @param receivedPdu
-	 *          Ankommende PDU
-	 */
-	protected abstract void loginResponseAction(String user);
 
-	/**
-	 * Aktion zur Behandlung ankommender Login-Events.
-	 * 
-	 * @param receivedPdu
-	 *          Ankommende PDU
-	 */
-	protected abstract void loginEventAction(String user);
 
-	/**
-	 * Aktion zur Behandlung ankommender Logout-Events.
-	 * 
-	 * @param receivedPdu
-	 *          Ankommende PDU
-	 */
-	protected abstract void logoutEventAction(String user);
-
-	/**
-	 * Aktion zur Behandlung ankommender Logout-Responses.
-	 * 
-	 * @param receivedPdu
-	 *          Ankommende PDU
-	 */
-	protected abstract void logoutResponseAction(String user);
-	
 }
