@@ -367,9 +367,9 @@ public class ClientGUI implements Runnable {
                     StringBuilder sb = new StringBuilder();
 
                     if (name.equals(username)) {
-                        sb.append("*YOU via JMS*");
+                        sb.append("*YOU (JMS)*");
                     } else {
-                        sb.append(name + " via JMS");
+                        sb.append(name + " (JMS)");
                     }
                     sb.append(":\t" + message + "\n");
 
@@ -410,9 +410,9 @@ public class ClientGUI implements Runnable {
                         StringBuilder sb = new StringBuilder();
 
                         if (chatName.equals(username)) {
-                            sb.append("*YOU via Kafka*");
+                            sb.append("*YOU (Kafka)*");
                         } else {
-                            sb.append(chatName + " via Kafka");
+                            sb.append(chatName + " (Kafka)");
                         }
                         sb.append(":\t" + chatMessage + "\n");
 

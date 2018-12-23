@@ -62,20 +62,6 @@ public class ClientController {
      * @param args
      */
     public static void main(String[] args) throws IOException {
-
-        //Teststuff for user interactions
-        /*
-        ClientController clientController = new ClientController();
-        clientController.getCurrentUsers();
-        clientController.login("TestUser");
-        clientController.login("TestUser");
-        clientController.logout("TestUser");
-        clientController.login("testUser"+Math.round(Math.random()*100));
-        clientController.getCurrentUsers();
-        clientController.sendMessage();
-        clientController.subscribeTopic();
-
-        */
     }
 
 
@@ -150,7 +136,7 @@ public class ClientController {
 
 
     // Code von https://www.mkyong.com/java/how-to-send-http-request-getpost-in-java/
-    //TODO change String to array after missing json stuff is implemented
+
     public ArrayList getCurrentUsers() throws IOException {
         String uri = this.URL + REST + "currentusers";
         URL url = new URL(uri);
@@ -182,7 +168,6 @@ public class ClientController {
 
 
     public boolean sendMessageToQueue(String user, String message, String type) {
-        //todo remove when kafka option works
         if (loggedIn && type.equals("Kafka")) {
             Properties properties = new Properties();
             properties.put("bootstrap.servers", "localhost:9092");

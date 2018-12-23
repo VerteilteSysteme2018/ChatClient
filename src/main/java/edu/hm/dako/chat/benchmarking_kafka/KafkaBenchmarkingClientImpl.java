@@ -3,12 +3,10 @@ package edu.hm.dako.chat.benchmarking_kafka;
 import edu.hm.dako.chat.benchmarking.BenchmarkingClientUserInterface;
 import edu.hm.dako.chat.client.ClientImpl;
 import edu.hm.dako.chat.client.ClientUserInterface;
-import edu.hm.dako.chat.client.SimpleMessageListenerThreadImpl;
 import edu.hm.dako.chat.common.ClientConversationStatus;
 import edu.hm.dako.chat.common.ExceptionHandler;
 import edu.hm.dako.chat.common.ImplementationType;
 import edu.hm.dako.chat.common.SharedClientStatistics;
-import edu.hm.dako.chat.connection.ConnectionFactory;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 

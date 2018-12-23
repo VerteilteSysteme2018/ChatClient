@@ -1,15 +1,7 @@
 package edu.hm.dako.chat.benchmarking_kafka;
 
 
-import edu.hm.dako.chat.common.ChatMessage;
-import org.apache.kafka.clients.consumer.ConsumerRecord;
-import org.apache.kafka.clients.consumer.ConsumerRecords;
-import org.apache.kafka.clients.consumer.KafkaConsumer;
-
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Properties;
 
 public class Test {
 
@@ -35,9 +27,6 @@ public class Test {
             }
         }
 
-        //kafkaChatClient.tell("Peter", "Sisisis");
-
-
     }
 
-    }
+}

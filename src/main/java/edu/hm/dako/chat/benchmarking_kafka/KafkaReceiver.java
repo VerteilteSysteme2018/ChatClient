@@ -4,9 +4,7 @@ import edu.hm.dako.chat.common.ChatMessage;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
-import org.jgroups.demos.Chat;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
@@ -67,19 +65,6 @@ public class KafkaReceiver {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            /**     try {
-             while (true) {
-             ConsumerRecords records = kafkaConsumer.poll(10);
-             for (Object record: records){
-
-             System.out.println(String.format(record.toString()));
-             }
-             }
-             } catch (Exception e){
-             System.out.println(e.getMessage());
-             } finally {
-             kafkaConsumer.close();
-             }*/
         });
         thread.start();
     }
